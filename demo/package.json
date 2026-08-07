@@ -1,0 +1,17 @@
+{
+  "name": "slidev-addon-nix-runner-demo",
+  "private": true,
+  "scripts": {
+    "dev": "slidev slides.md",
+    "build": "slidev build slides.md"
+  },
+  "dependencies": {
+    "slidev-addon-nix-runner": "file:.."
+  },
+  "devDependencies": {
+    "@slidev/cli": "^52.19.0",
+    "@slidev/theme-default": "^0.25.0",
+    "vue": "^3.5.22"
+  },
+  "packageManager": "pnpm@10.33.0"
+}

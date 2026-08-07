@@ -17,7 +17,9 @@
     "README.md",
     "LICENSE"
   ],
-  "scripts": {},
+  "scripts": {
+    "dev": "pnpm --dir demo dev"
+  },
   "dependencies": {
     "nix-eval": "^0.0.2"
   },
