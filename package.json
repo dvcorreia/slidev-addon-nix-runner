@@ -1,0 +1,32 @@
+{
+  "name": "slidev-addon-nix-runner",
+  "version": "0.0.0",
+  "description": "A Slidev addon that evaluates Nix code in Monaco code runners.",
+  "keywords": [
+    "slidev-addon",
+    "nix",
+    "nix-language",
+    "tvix",
+    "wasm"
+  ],
+  "license": "MIT",
+  "author": "Diogo Correia <dv_correia@hotmail.com>",
+  "type": "module",
+  "files": [
+    "setup",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {},
+  "dependencies": {
+    "nix-eval": "^0.0.2"
+  },
+  "devDependencies": {
+    "@slidev/cli": "^52.19.0",
+    "@slidev/client": "^52.19.0",
+    "@slidev/theme-default": "^0.25.0",
+    "@slidev/types": "^52.19.0",
+    "vue": "^3.5.22"
+  },
+  "packageManager": "pnpm@10.33.0"
+}
