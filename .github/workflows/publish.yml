@@ -4,15 +4,17 @@ on:
   push:
     tags:
       - "v*"
-      - "!v*-*"
 
 permissions:
   contents: write
-  id-token: write
 
 jobs:
-  publish:
+  publish-npm:
     runs-on: ubuntu-latest
+    environment: publish-npm
+    permissions:
+      contents: write
+      id-token: write
     steps:
       - uses: actions/checkout@v4
 
@@ -39,9 +41,16 @@ jobs:
         run: npm pack --dry-run
 
       - name: Publish package
-        run: npm publish --provenance --access public
+        run: |
+          if [[ "$GITHUB_REF_NAME" == *-* ]]; then
+            npm_tag=next
+          else
+            npm_tag=latest
+          fi
+          npm publish --provenance --access public --tag "$npm_tag"
 
       - name: Create GitHub release
+        if: ${{ !contains(github.ref_name, '-') }}
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh release create "${{ github.ref_name }}" --generate-notes
