@@ -7,10 +7,21 @@
     "nix",
     "nix-language",
     "tvix",
-    "wasm"
+    "webassembly",
+    "wasm",
+    "browser",
+    "monaco-run"
   ],
-  "license": "MIT",
   "author": "Diogo Correia <dv_correia@hotmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/dvcorreia/slidev-addon-nix-runner#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dvcorreia/slidev-addon-nix-runner.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dvcorreia/slidev-addon-nix-runner/issues"
+  },
   "type": "module",
   "files": [
     "setup",
