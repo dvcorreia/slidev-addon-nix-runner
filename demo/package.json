@@ -2,7 +2,7 @@
   "name": "slidev-addon-nix-runner-demo",
   "private": true,
   "scripts": {
-    "dev": "slidev slides.md",
+    "dev": "slidev slides.md --force",
     "build": "slidev build slides.md"
   },
   "dependencies": {
