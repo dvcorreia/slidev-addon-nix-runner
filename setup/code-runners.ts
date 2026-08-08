@@ -20,11 +20,11 @@ function getEvaluator(strict: boolean): Promise<Evaluator> {
   return evaluator
 }
 
-function outputLines(text: string, className?: string) {
+function outputLines(text: string, className?: string, highlightLang?: string) {
   return text
     .split("\n")
     .filter((line, index, lines) => line || index < lines.length - 1)
-    .map((text) => ({ text, class: className }))
+    .map((text) => ({ text, class: className, highlightLang }))
 }
 
 export default defineCodeRunnersSetup(() => {
@@ -39,7 +39,7 @@ export default defineCodeRunnersSetup(() => {
       .then((evaluator) => evaluator.eval(source, "/input.nix"))
       .then((result) => {
         lines.value = [
-          ...outputLines(result.output),
+          ...outputLines(result.output, undefined, "nix"),
           ...outputLines(result.warnings, "text-yellow"),
           ...outputLines(result.errors, "text-red"),
         ]
